@@ -29,7 +29,12 @@ class Solution {
             if (maxReach >= nums.length - 1) {
                 return true;
             }
+
         }
         return false;
     }
 }
+
+// If at any point i > maxReach, it means we are stuck at an index we can't jump beyond, so we return false.
+// At each step, we update maxReach to be the farthest index that can be reached from the current position.
+// If maxReach ever reaches or exceeds the last index (nums.length - 1), we return true early.
